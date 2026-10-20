@@ -10,75 +10,72 @@
 <meta property="og:title" content="Party Deck - charades and imposter with AI decks">
 <meta property="og:image" content="https://pacificfrontdesk.github.io/partydeck/img/icon.jpg">
 <meta name="twitter:card" content="summary">
+<meta property="og:description" content="Phone on your forehead, tilt to answer. Decks on any topic, made on your iPhone.">
 <link rel="icon" href="img/icon.jpg">
 <link rel="apple-touch-icon" href="img/icon.jpg">
-<meta property="og:description" content="Phone on your forehead, tilt to answer. Decks on any topic, made on your iPhone.">
-<style>
-:root { color-scheme: light dark; }
-    body {
-      margin: 0 auto; padding: 48px 24px 96px; max-width: 46rem;
-      font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: #1D1726; background: #F6F3FB;
-    }
-    h1 { font-size: 1.9rem; letter-spacing: -0.01em; margin: 0 0 0.25rem; }
-    h2 { font-size: 1.15rem; margin: 2.4rem 0 0.6rem; }
-    .sub { color: #6D6678; margin: 0 0 2.5rem; }
-    ul { padding-left: 1.2rem; }
-    li { margin: 0.35rem 0; }
-    a { color: #7C3AED; }
-    footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid #DDD5EA; color: #6D6678; font-size: 0.92rem; }
-    .cta { display: inline-block; margin: 1.1rem 0 0.4rem; padding: 12px 24px; border-radius: 999px;
-           background: #7C3AED; color: #fff; font-weight: 600; text-decoration: none; }
-    /* Nothing to tap until the app is live, so it reads as a label, not a button. */
-    .cta.soon { background: transparent; color: #6D6678; border: 1.5px solid #DDD5EA; cursor: default; }
-    @media (prefers-color-scheme: dark) {
-      body { color: #F1EEF6; background: #0F0C17; }
-      .sub, footer { color: #A29BAE; }
-      footer { border-top-color: #2C2638; }
-      a { color: #B794F6; }
-      .cta { background: #B794F6; color: #0F0C17; }
-      .cta.soon { background: transparent; color: #A29BAE; border-color: #2C2638; }
-    }
-    .hero { display: flex; align-items: center; gap: 20px; margin-bottom: 1.8rem; }
-    .icon { width: 96px; height: 96px; border-radius: 22%; flex: 0 0 auto;
-            box-shadow: 0 4px 14px rgba(29, 23, 38, 0.18); }
-    .hero h1 { margin: 0; }
-    .hero .sub { margin: 0.1rem 0 0; }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<main>
 <div class="hero">
-  <img class="icon" src="img/icon.jpg" width="96" height="96" alt="Party Deck app icon: a fan of pink, yellow and purple cards with a white sparkle">
+  <img class="icon" src="img/icon.jpg" width="112" height="112" alt="Party Deck app icon: a fan of pink, yellow and purple cards with a white sparkle">
   <div>
-    <h1>Party Deck</h1>
-    <p class="sub">Charades and imposter · AI decks on any topic</p>
+    <div class="title"><h1>Party Deck</h1><span class="doodle">⭐</span></div>
+    <span class="sticker">AI decks!</span>
   </div>
 </div>
 
-<p><strong>Phone on your forehead, friends shout clues, tilt to answer.</strong> Type any topic -
-"90s cartoons", "things at a wedding", "Marvel villains" - and Party Deck makes a fresh deck in
-seconds, right on your iPhone.</p>
-<span class="cta soon">Coming soon to the App Store</span>
-<p class="sub">Free for iPhone · one optional lifetime unlock, no subscription</p>
+<p class="tagline">Phone on your forehead. Friends shout clues. Tilt to answer.</p>
+<p class="lead">Type any topic - "90s cartoons", "things at a wedding", "Marvel villains" - and Party Deck
+makes a fresh deck in seconds, right on your iPhone. Or play the ready-made decks, write your own,
+or try Imposter.</p>
+<div class="cta-row">
+  <!-- At launch, swap for: <a class="btn" href="https://apps.apple.com/app/idXXXXXXXXXX">Get it on the App Store</a> -->
+  <span class="btn soon">Coming soon to the App Store</span>
+  <span class="small">Free for iPhone · one lifetime unlock, no subscription</span>
+</div>
+
+<div class="shots">
+  <img src="img/01-home.jpg" width="552" height="1200" alt="Home screen: make a deck on any topic, your own deck, Imposter">
+  <img src="img/02-decks.jpg" width="552" height="1200" alt="Ready-made decks with sticker art: Animals, Movies, Act It Out, Foods">
+  <img class="wide" src="img/03-round.jpg" width="1200" height="552" alt="A round in play: the word Spider-Man on a big card, timer at 19">
+  <img class="wide" src="img/04-results.jpg" width="1200" height="552" alt="Results: Round complete, 2 correct in a yellow starburst">
+</div>
 
 <h2>How it plays</h2>
-<ul>
-  <li><strong>Charades:</strong> hold the phone to your forehead. Tilt down when you guess the word, tilt up to pass. Sixty seconds, then see every card you got.</li>
-  <li><strong>Imposter:</strong> pass the phone around. Everyone sees the secret word except one player. Talk, bluff, then vote.</li>
-  <li><strong>Your own deck:</strong> names, inside jokes, places only your group knows.</li>
-</ul>
+<div class="modes">
+  <div class="card pink">
+    <span class="doodle">🙆</span>
+    <h3>Charades</h3>
+    <p>Phone on your forehead. Tilt down when you guess it, up to pass. Sixty seconds, then see every card.</p>
+  </div>
+  <div class="card purple">
+    <span class="doodle">🕵️</span>
+    <h3>Imposter</h3>
+    <p>Pass the phone. Everyone sees the secret word except one player. Talk, bluff, vote. Find the liar!</p>
+  </div>
+  <div class="card yellow">
+    <span class="doodle">🃏</span>
+    <h3>Your own deck</h3>
+    <p>Names, inside jokes, places only your group knows. Share any deck with a link.</p>
+  </div>
+</div>
 
-<h2>Private by design</h2>
-<p>Decks are made by Apple Intelligence on your iPhone, not on a server. No account, no ads, no
-tracking, and it works offline. When you share a deck with a link, the cards travel inside the
-link itself - they never reach us.</p>
+<div class="card private tape yellow-tape">
+  <span class="doodle" style="right:6px;top:-20px;transform:rotate(10deg)">🔒</span>
+  <h2>Private by design</h2>
+  <p>Decks are made by Apple Intelligence on your iPhone, not on a server. No account, no ads, no
+  tracking, and it works offline. When you share a deck with a link, the cards travel inside the
+  link itself - they never reach us.</p>
+</div>
 
 <h2>Help and policies</h2>
-<ul>
-  <li><a href="./support.html">Support</a> - common questions, and how to reach us</li>
-  <li><a href="./privacy.html">Privacy Policy</a> - Party Deck collects nothing about you</li>
-  <li><a href="./terms.html">Terms of Use</a></li>
-</ul>
+<div class="chips">
+  <a href="./support.html">Support</a>
+  <a href="./privacy.html">Privacy Policy</a>
+  <a href="./terms.html">Terms of Use</a>
+</div>
+</main>
 <footer>
   Party Deck is made by Oleg Nochka, an independent developer in Los Angeles.<br>
   <a href="./">Home</a> · <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a> · <a href="./support.html">Support</a>

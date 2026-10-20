@@ -7,50 +7,38 @@
 <meta name="robots" content="noindex">
 <meta property="og:title" content="A Party Deck deck">
 <meta property="og:description" content="Tap to add this deck to Party Deck and play it - phone on your forehead, tilt to answer.">
-<style>
-:root { color-scheme: light dark; }
-    body {
-      margin: 0 auto; padding: 48px 24px 96px; max-width: 46rem;
-      font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      color: #1D1726; background: #F6F3FB;
-    }
-    h1 { font-size: 1.9rem; letter-spacing: -0.01em; margin: 0 0 0.25rem; }
-    h2 { font-size: 1.15rem; margin: 2.4rem 0 0.6rem; }
-    .sub { color: #6D6678; margin: 0 0 2.5rem; }
-    ul { padding-left: 1.2rem; }
-    li { margin: 0.35rem 0; }
-    a { color: #7C3AED; }
-    footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid #DDD5EA; color: #6D6678; font-size: 0.92rem; }
-    .cta { display: inline-block; margin: 1.1rem 0 0.4rem; padding: 12px 24px; border-radius: 999px;
-           background: #7C3AED; color: #fff; font-weight: 600; text-decoration: none; }
-    /* Nothing to tap until the app is live, so it reads as a label, not a button. */
-    .cta.soon { background: transparent; color: #6D6678; border: 1.5px solid #DDD5EA; cursor: default; }
-    @media (prefers-color-scheme: dark) {
-      body { color: #F1EEF6; background: #0F0C17; }
-      .sub, footer { color: #A29BAE; }
-      footer { border-top-color: #2C2638; }
-      a { color: #B794F6; }
-      .cta { background: #B794F6; color: #0F0C17; }
-      .cta.soon { background: transparent; color: #A29BAE; border-color: #2C2638; }
-    }
-    ol { padding-left: 1.6rem; columns: 2; column-gap: 2rem; }
-    @media (max-width: 480px) { ol { columns: 1; } }
-</style>
+<meta property="og:image" content="https://pacificfrontdesk.github.io/partydeck/img/icon.jpg">
+<link rel="icon" href="img/icon.jpg">
+<link rel="apple-touch-icon" href="img/icon.jpg">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1 id="title">A shared deck</h1>
-<p class="sub" id="count">Party Deck</p>
+<main>
+<a class="brand" href="./"><img src="img/icon.jpg" alt="">Party Deck</a>
 <div id="deck" hidden>
-  <a class="cta" id="open" href="#">Open in Party Deck</a>
-  <p class="sub">Don't have it yet? <span id="store">Party Deck is coming soon to the App Store.</span></p>
+  <div class="page-title">
+    <h1 id="title">A shared deck</h1>
+    <span class="sticker" id="count">Party Deck</span>
+  </div>
+  <div class="cta-row">
+    <a class="btn" id="open" href="#">Open in Party Deck</a>
+    <span class="small" id="store">Don't have it yet? Party Deck is coming soon to the App Store.</span>
+  </div>
   <h2>Cards</h2>
-  <ol id="cards"></ol>
+  <ul class="deck-cards" id="cards"></ul>
 </div>
-<p id="error" hidden>This link has no deck in it. It may have been cut short when it was copied -
-ask your friend to share it again.</p>
-<p class="sub">The deck lives in this link. This page reads it inside your browser; the cards
+<div class="card tape" id="error" hidden>
+  <span class="doodle" style="right:6px;top:-20px;transform:rotate(12deg)">🤔</span>
+  <h2>This link has no deck in it</h2>
+  <p>It may have been cut short when it was copied - ask your friend to share it again.</p>
+</div>
+<p class="small" style="margin-top:2rem">The deck lives in this link. This page reads it inside your browser; the cards
 are never sent to a server.</p>
-
+</main>
+<footer>
+  Party Deck is made by Oleg Nochka, an independent developer in Los Angeles.<br>
+  <a href="./">Home</a> · <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a> · <a href="./support.html">Support</a>
+</footer>
 <script>
 // Mirror of DeckLink.swift: base64url -> raw DEFLATE -> {"v":1,"t":title,"c":[cards]}.
 // A new link pasted into the same tab only changes the hash, so start over.
@@ -73,7 +61,7 @@ addEventListener("hashchange", () => location.reload());
     const title = clean(deck.t, 60) || "Shared deck";
     document.title = title + " - Party Deck";
     document.getElementById("title").textContent = title;
-    document.getElementById("count").textContent = cards.length + " cards · a Party Deck deck";
+    document.getElementById("count").textContent = cards.length + " cards";
     const list = document.getElementById("cards");
     for (const c of cards) { const li = document.createElement("li"); li.textContent = c; list.append(li); }
     document.getElementById("open").href = "partydeck://deck#" + frag;
@@ -83,9 +71,5 @@ addEventListener("hashchange", () => location.reload());
   }
 })();
 </script>
-<footer>
-  Party Deck is made by Oleg Nochka, an independent developer in Los Angeles.<br>
-  <a href="./">Home</a> · <a href="./privacy.html">Privacy</a> · <a href="./terms.html">Terms</a> · <a href="./support.html">Support</a>
-</footer>
 </body>
 </html>
